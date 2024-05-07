@@ -8,6 +8,7 @@ public class DreamhouseApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DreamhouseApplication.class, args);
+		System.out.println("Hello Word!");
 	}
 
 }
