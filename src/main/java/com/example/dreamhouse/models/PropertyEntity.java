@@ -24,7 +24,7 @@ public class PropertyEntity {
     @Column(name = "property_id")
     private UUID propertyId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner_id", nullable = false)
     private OwnerEntity owner;
 
@@ -63,9 +63,9 @@ public class PropertyEntity {
     @Column(name = "price", nullable = false)
     private BigDecimal price;
 
-    @OneToMany(mappedBy = "property", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "property", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<LeaseEntity> leases;
 
-    @OneToMany(mappedBy = "property", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "property", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<MaintenanceEntity> maintenanceRequests;
 }

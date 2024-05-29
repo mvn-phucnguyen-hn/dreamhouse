@@ -22,7 +22,7 @@ public class MaintenanceEntity {
     @Column(name = "request_id")
     private UUID requestId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "property_id", nullable = false)
     private PropertyEntity property;
 

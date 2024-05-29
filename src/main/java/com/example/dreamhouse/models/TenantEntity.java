@@ -43,7 +43,7 @@ public class TenantEntity {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "property_id")
     private PropertyEntity property;
 }

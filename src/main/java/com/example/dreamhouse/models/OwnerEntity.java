@@ -49,6 +49,6 @@ public class OwnerEntity {
     @Column(name = "address", nullable = false)
     private String address;
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<PropertyEntity> properties;
 }
